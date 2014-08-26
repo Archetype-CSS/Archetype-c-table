@@ -1,0 +1,122 @@
+/*** @export "Archetype-c-table" css */
+/**
+ * Tables
+ *
+ * 1. Allows for rounded corners
+ * 2. Align column headings
+ * 3. Prevent double border
+ * 4. Round corner for first th or td in the first row in the first thead or tbody
+ * 5. Round corner for first th or td in the last row in the last thead or tbody
+ * 6. Remove border-radius for first and last td in the last row in the last tbody for table with tfoot
+ * 7. Round the left border on the first td/th
+ * 8. Round the left border on the last td/th
+ */
+
+table { 
+  max-width: 100%;
+ }
+ 
+.table {
+  width: 100%;
+  margin-bottom: u-deepGet($table-settings, border-radius);
+  background-color: u-deepGet($table-settings, color-border);
+  border: u-deepGet($table-settings, border);
+  border-collapse: separate;                                /* 1 */
+  border-left: 0;
+  @include border-radius(u-deepGet($table-settings, border-radius));
+  th,
+  td {
+    border-left: u-deepGet($table-settings, border);
+    padding: .5em;
+    line-height: $base-line-height;
+    text-align: left;
+    vertical-align: top;  
+  }
+  th {
+    font-weight: bold;
+  }
+  thead th {
+    vertical-align: bottom;                                                /* 2 */
+  }
+  caption + thead tr:first-child th,
+  caption + tbody tr:first-child th,
+  caption + tbody tr:first-child td,
+  colgroup + thead tr:first-child th,
+  colgroup + tbody tr:first-child th,
+  colgroup + tbody tr:first-child td,
+  thead:first-child tr:first-child th,
+  tbody:first-child tr:first-child th,
+  tbody:first-child tr:first-child td {                                     /* 3 */
+    border-top: 0;
+  }
+  thead:first-child tr:first-child > th:first-child,
+  tbody:first-child tr:first-child > td:first-child {                       /* 4 */
+    @include border-top-left-radius(u-deepGet($table-settings, border-radius));
+  }
+  thead:first-child tr:first-child > th:last-child,
+  tbody:first-child tr:first-child > td:last-child {
+    @include border-top-right-radius(u-deepGet($table-settings, border-radius));
+  }
+  thead:last-child tr:last-child > th:first-child,
+  tbody:last-child tr:last-child > td:first-child,
+  tfoot:last-child tr:last-child > td:first-child {                         /* 5 */
+    @include border-bottom-left-radius(u-deepGet($table-settings, border-radius));    
+  }
+  thead:last-child tr:last-child > th:last-child,
+  tbody:last-child tr:last-child > td:last-child,
+  tfoot:last-child tr:last-child > td:last-child {
+    @include border-bottom-right-radius(u-deepGet($table-settings, border-radius));
+  }
+  tfoot + tbody:last-child tr:last-child td:first-child {
+    @include border-bottom-left-radius(0);                                  /* 6 */
+  }
+  tfoot + tbody:last-child tr:last-child td:last-child {
+    @include border-bottom-right-radius(0);
+  }
+  caption + thead tr:first-child th:first-child,
+  caption + tbody tr:first-child td:first-child,
+  colgroup + thead tr:first-child th:first-child,
+  colgroup + tbody tr:first-child td:first-child {
+    @include border-top-left-radius(u-deepGet($table-settings, border-radius));                 /* 7 */
+  }
+  caption + thead tr:first-child th:last-child,
+  caption + tbody tr:first-child td:last-child,
+  colgroup + thead tr:first-child th:last-child,
+  colgroup + tbody tr:first-child td:last-child {
+    @include border-top-right-radius(u-deepGet($table-settings, border-radius));                /* 8 */
+  }
+}
+ 
+ 
+/*** @export "table-zebra-stripes" css */
+/**
+ * Table Zebra Stripes
+ */
+.table--srtriped  tbody {
+  > tr:nth-child(odd) > td,
+  > tr:nth-child(odd) > th {
+    background-color: u-deepGet($table-settings, color-bg-stripe);
+  }
+}   
+ 
+ 
+/*** @export "table-hover-highlight" css */
+/**
+ * Table Hover Highlight
+ */
+.table--hover tbody {
+  tr:hover td,
+  tr:hover th {
+    background-color: u-deepGet($table-settings, color-bg-hover);
+  }
+}
+
+
+/*** @export "table-states" css */
+/**
+ * Table States
+ */
+.is-table--error { background-color: u-deepGet($table-settings, color-bg-error); }
+.is-table--warning { background-color: u-deepGet($table-settings, color-bg-error); }
+.is-table--success { background-color: u-deepGet($table-settings, color-bg-success); }
+

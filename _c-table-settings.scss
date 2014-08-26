@@ -1,0 +1,19 @@
+/*** @export "Archetype-c-table-settings" css */
+/**
+ * Table Settings
+ */
+$table-settings: (
+  border-radius: 4px, // global border radius this
+  color-bg: u-deepGet($colorPallet, bgColor, muted),
+  border: 1px solid #333,
+  color-border: #666,
+  color-bg-hover: u-deepGet($colorPallet, bgColor, muted),
+  color-bg-stripe: u-deepGet($colorPallet, bgColor, strong),
+  color-bg-success: u-deepGet($basePallet, success),
+  color-bg-error: u-deepGet($basePallet, error),
+  color-bg-warning: u-deepGet($basePallet, warning),
+  color-bg-header: u-deepGet($colorPallet, bgColor, subtle),
+  color-bg-footer: u-deepGet($colorPallet, bgColor, subtle),
+  color-txt-header: u-deepGet($colorPallet, textColor, subtle),
+  color-txt-footer: u-deepGet(textColor, subtle)
+);

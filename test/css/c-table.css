@@ -1,0 +1,502 @@
+/**
+ * Test: Archetype/u-text.scss
+ *
+ */
+/**
+ * Component Constructor
+ *
+ * Used to provide a means for overriding default styles without redundant output
+ * Allows for the component to be package managed with a tool like bower
+ * without being tied to its predefined styles/settings for unit testing
+ *
+ * Sass v3.3.2 (Maptastic Maple)
+ * Compass (v1.0.0.alpha.19)
+ *
+ * 1. Component Constructor takes arguments, $map, and $key(s)
+ * 2. Loop over $map and find properties and values
+ * 3. Output 'property: value;'
+ * 4. Account for nested maps
+ *
+ */
+/**
+ * Deep Get (from Susy2)
+ * 
+ * Return a value deep in nested maps
+ * https://github.com/ericam/susy/blob/master/sass/susy/math/su/_maps.scss
+ */
+/** 
+ * Name Spaced Wrapper for Archetype
+ */
+/*** @export "Archetype-u-colorkit" css */
+/**
+ * Colorkit
+ *
+ */
+/**
+ * Colorkit
+ * 
+ */
+/**
+ * Color Stacks
+ *
+ * Returns a list of mixed colors at given intervals based on two initial source colors
+ * https://github.com/ericam/accoutrement/blob/master/stylesheets/accoutrement/_color.scss
+ * 
+ * $main: The main color this stack is based on
+ * $second: The color to be mixed in at varrying amounts
+ * $amounts: Optional list of percentage mix intervals
+ */
+/**
+ * Amounts
+ * 
+ * used in stack functions to create multiple color variants
+ */
+/**
+ * Color Stack
+ * 
+ * creates a list (color pallet) of color values based on the following arguments:
+ *
+ * $main: the color to generate variants from
+ * $second: the color to mix with $main to create the variants
+ * $amounts: the list of mixture amounts, determines the number of variants
+ *
+ * Remember: the first value in the stack is the unadjusted color, meaning each 
+ * stack includes the color which the stack was derived from. The adjusted colors 
+ * in the stack begin at 2.
+ */
+/**
+ * Value Stacks
+ *
+ * Functions to return a tint/shade/tone stack based on a given color
+ * 
+ * $color: color to adjust
+ * $amounts: optional list of percentage amounts
+ */
+/**
+ * Simple Color Value
+ * 
+ * Functions to adjust the tint/shade/tone of a single color
+ *
+ * $color: color to adjust
+ * $amount: the percentage amount
+ */
+/**
+ * Gray Scale 
+ * 
+ * return opapue/alpha gray scale
+ */
+/**
+ * Color-Scheme
+ * 
+ * mixin to generate harmonious color-scheme variables 
+ *
+ * $color-relationship: monochromatic, analogous, complementary, split-complementary, triadic, tetradic, quadradic
+ * $base-color: the color to initiate the color scheme with
+ * $color-angle: the degrees of seperation between colors on the wheel.
+ *
+ */
+/**
+ * Color Swatch Generator
+ *
+ * generates color swatch class names based on a given color list
+ * $color-swatches
+ *
+ * ex:
+ * $swatches: color-stack(red, blue, $default-amounts);
+ * @include swatch-gen($swatches);
+ */
+/**
+ * Colorkit Color Library
+ *
+ */
+/**
+ * Reds
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Red-Oranges
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Oranges
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Yellow-Orange
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Yellows
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Yellow-Greens
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Greens
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Blue-Greens
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Blues
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Blue-Violets
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Violets
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Red-Violets
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Browns
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * grays
+ * 
+ */
+/**
+ * Tints
+ */
+/**
+ * Tones
+ */
+/**
+ * Shades
+ */
+/**
+ * Color Scheme Pallet
+ *
+ * for experimenting with color in the browser
+ * 
+ * generates monochromatic, complementary, split-complementary, triadic,
+ * analogous, double-complementary, tetradic, and quadradic color-schemes along
+ * with (six by default) tints, tones, and shades of each color in your scheme.  
+ * These colors are given class names automaticly. 
+ *
+ * Remember: the first value in the $tint-stack, $tone-stack, and $shade-stack
+ * lists is the unadjusted color, meaning each stack includes the color which the
+ * stack was derived from. The adjusted colors in the stack begin at 2.
+ */
+/*** @export "Archetype-u-colorkit-settings" css */
+/**
+ * Color Pallet
+ * 
+ */
+/**
+ * Color Scheme
+ * 
+ * Generate harmonious color scheme based on a single key-color ($base-color)
+ * @include color-scheme($base-color, $color-relationship);
+ * $base-color: any CSS color value or keyword
+ * $color-relationship: monochromatic/complementary/spit-complementary/analogous/triadic/tetradic/quadradic
+ * $color-angle: (defaults to 30)
+ */
+/**
+ * Base Pallet
+ *
+ * use this pallet to easily derive color pallet variables from
+ */
+/**
+ * Color Pallet
+ */
+/**
+ * Brand Colors
+ *
+ * prefixed with '$brand-' to avoid proper color names for ease of use and to avoid collision with CSS color keywords
+ * ex: $brand-blue: deepskyblue; or: $brand-accent: tint($brand-blue, 12%);
+ */
+/**
+ * ex:
+ * $brand-blue:;
+ * $brand-primary:;
+ * $brand-secondary:;
+ * $brand-accent:;
+ */
+/**
+ * UI and State Colors
+ *
+ */
+/*** @export "Archetype-c-table-settings" css */
+/**
+ * Table Settings
+ */
+/*** @export "Archetype-c-table" css */
+/**
+ * Tables
+ *
+ * 1. Allows for rounded corners
+ * 2. Align column headings
+ * 3. Prevent double border
+ * 4. Round corner for first th or td in the first row in the first thead or tbody
+ * 5. Round corner for first th or td in the last row in the last thead or tbody
+ * 6. Remove border-radius for first and last td in the last row in the last tbody for table with tfoot
+ * 7. Round the left border on the first td/th
+ * 8. Round the left border on the last td/th
+ */
+/* line 15, ../../_c-table.scss */
+table {
+  max-width: 100%;
+}
+
+/* line 19, ../../_c-table.scss */
+.table {
+  width: 100%;
+  margin-bottom: 4px;
+  background-color: #666;
+  border: 1px solid #333;
+  border-collapse: separate;
+  /* 1 */
+  border-left: 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 27, ../../_c-table.scss */
+.table th,
+.table td {
+  border-left: 1px solid #333;
+  padding: .5em;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: top;
+}
+/* line 35, ../../_c-table.scss */
+.table th {
+  font-weight: bold;
+}
+/* line 38, ../../_c-table.scss */
+.table thead th {
+  vertical-align: bottom;
+  /* 2 */
+}
+/* line 41, ../../_c-table.scss */
+.table caption + thead tr:first-child th,
+.table caption + tbody tr:first-child th,
+.table caption + tbody tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + tbody tr:first-child th,
+.table colgroup + tbody tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table tbody:first-child tr:first-child th,
+.table tbody:first-child tr:first-child td {
+  /* 3 */
+  border-top: 0;
+}
+/* line 52, ../../_c-table.scss */
+.table thead:first-child tr:first-child > th:first-child,
+.table tbody:first-child tr:first-child > td:first-child {
+  /* 4 */
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+/* line 56, ../../_c-table.scss */
+.table thead:first-child tr:first-child > th:last-child,
+.table tbody:first-child tr:first-child > td:last-child {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/* line 60, ../../_c-table.scss */
+.table thead:last-child tr:last-child > th:first-child,
+.table tbody:last-child tr:last-child > td:first-child,
+.table tfoot:last-child tr:last-child > td:first-child {
+  /* 5 */
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+/* line 65, ../../_c-table.scss */
+.table thead:last-child tr:last-child > th:last-child,
+.table tbody:last-child tr:last-child > td:last-child,
+.table tfoot:last-child tr:last-child > td:last-child {
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* line 70, ../../_c-table.scss */
+.table tfoot + tbody:last-child tr:last-child td:first-child {
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  /* 6 */
+}
+/* line 73, ../../_c-table.scss */
+.table tfoot + tbody:last-child tr:last-child td:last-child {
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* line 76, ../../_c-table.scss */
+.table caption + thead tr:first-child th:first-child,
+.table caption + tbody tr:first-child td:first-child,
+.table colgroup + thead tr:first-child th:first-child,
+.table colgroup + tbody tr:first-child td:first-child {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  /* 7 */
+}
+/* line 82, ../../_c-table.scss */
+.table caption + thead tr:first-child th:last-child,
+.table caption + tbody tr:first-child td:last-child,
+.table colgroup + thead tr:first-child th:last-child,
+.table colgroup + tbody tr:first-child td:last-child {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  /* 8 */
+}
+
+/*** @export "table-zebra-stripes" css */
+/**
+ * Table Zebra Stripes
+ */
+/* line 96, ../../_c-table.scss */
+.table--srtriped tbody > tr:nth-child(odd) > td,
+.table--srtriped tbody > tr:nth-child(odd) > th {
+  background-color: #333333;
+}
+
+/*** @export "table-hover-highlight" css */
+/**
+ * Table Hover Highlight
+ */
+/* line 108, ../../_c-table.scss */
+.table--hover tbody tr:hover td,
+.table--hover tbody tr:hover th {
+  background-color: #b3b3b3;
+}
+
+/*** @export "table-states" css */
+/**
+ * Table States
+ */

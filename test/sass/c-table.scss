@@ -1,0 +1,14 @@
+/**
+ * Test: Archetype/u-text.scss
+ *
+ */
+
+// fix tests without pulling in all of Archetype
+$base-line-height: 24px;
+@import 'compass'; // pull in compass for test suite
+
+@import '../../bower_components/Archetype-u-componentConstructor/u-componentConstructor';
+@import '../../bower_components/Archetype-u-colorkit/u-colorkit';
+@import '../../c-table-settings';
+@import '../../c-table';
+
